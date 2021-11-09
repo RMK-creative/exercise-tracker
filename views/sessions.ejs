@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
+      integrity="sha512-g06pohSHYbSOHKq8tdDGXckE6C23Yt30xlTFDhrO0OcO/bNO2MWXb63oqU/Y23GDMNOon100eGHxZPBnT4QgMw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Exercise Tracker App</title>
+  </head>
+
+  <h2>Add a new session:</h2>
+    <form action="/sessions/createSession" method="POST">
+      <input
+        type="text"
+        placeholder="Session type: e.g 'boxing'"
+        name="sessionItemType"
+      />
+      <input type="datetime-local" name="sessionItemDate" />
+      <input type="number" placeholder="HR avg" name="sessionItemHR" />
+      <input type="number" placeholder="Calories" name="sessionItemCals" />
+      <input type="submit" />
+    </form>
+
+    <!--  ENTER TABLE HERE TO VIEW ALL SESSIONS  -->
+  
+  </body>
+</html>
