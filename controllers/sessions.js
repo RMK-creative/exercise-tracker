@@ -11,16 +11,15 @@ module.exports = {
   },
   createSession: async (req, res) => {
     try {
-      // creates a new Session using the Model. create is a mongoose method
-      // req.body.sessionItem comes from the form (name="session")
       await Session.create({
-        sessionType: req.body.sessionItemType,
-        sessionDate: req.body.sessionItemDate,
-        sessionHR: req.body.sessionItemHR,
-        sessionCalories: req.body.sessionItemCals,
+        type: req.body.sessionItemType,
+        date: req.body.sessionItemDate,
+        hr: req.body.sessionItemHR,
+        calories: req.body.sessionItemCals,
+        duration: req.body.sessionItemDuration,
       });
       console.log("Session has been added!");
-      res.redirect("/ ");
+      res.redirect("/");
     } catch (err) {
       console.log(err);
     }
