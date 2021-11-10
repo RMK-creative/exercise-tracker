@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
@@ -16,19 +17,79 @@
 
   <h2>Add a new session:</h2>
     <form action="/sessions/createSession" method="POST">
-      <input
+      <label>
+        Session Type:
+        <input
         type="text"
-        placeholder="Session type: e.g 'boxing'"
+        placeholder="e.g boxing"
         name="sessionItemType"
       />
-      <input type="datetime-local" name="sessionItemDate" />
-      <input type="number" placeholder="HR avg" name="sessionItemHR" />
-      <input type="number" placeholder="Calories" name="sessionItemCals" />
-      <input type="text" placeholder="hh:mm" name="sessionItemDuration" />
-      <input type="submit" />
+      </label>
+      <label>
+        Date & time:
+        <input type="date" name="sessionItemDate" />
+      </label>
+      <label>
+        HR average:
+        <input type="number" placeholder="HR avg" name="sessionItemHR" />
+      </label>
+      <label>
+        Calories:
+        <input type="number" placeholder="Calories" name="sessionItemCals" />
+      </label>
+      <label>
+        Duration (mins):
+        <input type="text" placeholder="hh:mm" name="sessionItemDuration" />
+      </label>
+      
+      <label>
+        Notes:
+        <input type="text" name="sessionItemNotes" />
+      </label>
+      <input type="submit" class="submit" />
     </form>
 
     <!--  ENTER TABLE HERE TO VIEW ALL SESSIONS  -->
-  
+
+
+    <!-- <ul>
+      <% sessions.forEach( el => { %>
+          <li class='sessionItem' data-id='<%=el._id%>'>
+            <p><%=el.type%></p>
+              <span class='del'> Delete </span>
+          </li>
+      <% }) %>    
+      </ul> -->
+
+      <% if (sessions) { %>
+    <table class="sessions">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Date</th>
+          <th>HR avg</th>
+          <th>Calories</th>
+          <th>Duration (mins)</th>
+        </tr
+      </thead>
+      
+      <tbody>
+        <% sessions.forEach( el => { %>
+          <tr>
+            <td><a href="/sessions/<%= el._id %>"><%= el.type %></a></td>
+            <td>%><%= moment(el.date).format('hh:mm a MMM DD YYYY') %></td>
+            <td><%= el.hr %></td>
+            <td><%= el.calories %></td>
+            <td><%= el.duration %></td>
+          </tr>
+        
+          
+        </tr>
+        
+        <% }) %> 
+      </tbody>
+      
+    </table>
+    <% } %>
   </body>
 </html>
