@@ -17,5 +17,8 @@ const SessionSchema = new mongoose.Schema({
   duration: {
     type: Number,
   },
+  notes: {
+    type: String,
+  },
 });
 module.exports = mongoose.model("Session", SessionSchema);

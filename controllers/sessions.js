@@ -17,6 +17,7 @@ module.exports = {
         hr: req.body.sessionItemHR,
         calories: req.body.sessionItemCals,
         duration: req.body.sessionItemDuration,
+        notes: req.body.sessionItemNotes,
       });
       console.log("Session has been added!");
       res.redirect("/");
