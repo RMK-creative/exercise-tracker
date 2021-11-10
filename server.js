@@ -6,16 +6,24 @@ require("dotenv").config({ path: "./config/.env" });
 
 connectDB();
 
-app.set("view engine", "ejs");
-
+// body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// ejs
+app.set("view engine", "ejs");
+
+// moment date formatter - allow access in all files
+app.locals.moment = require("moment");
+
+// static files
+app.use(express.static("public"));
 
 /*
         ROUTES
 */
 app.use("/", require("./routes/home"));
-// app.use("/sessions", require("./routes/sessions"));
+app.use("/sessions", require("./routes/sessions"));
 
 /*
         LISTEN
