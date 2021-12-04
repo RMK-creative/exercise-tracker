@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Exercise Tracker App</title>
+  </head>
+  <body>
+    <h1>IT WORKS!</h1>
+    <h2>Here's your session data..</h2>
+    <h3>Session: <%= data.type %></h3>
+    <p>Date: <%= moment(data.date).format('DD MMM YYYY') %></p>
+    <p>
+      In this session you burned <%= data.calories %> calories over a period of
+      <%= data.duration %> minutes, and your average heart rate was <%= data.hr
+      %>.
+    </p>
+    <p>Additional notes: <%= data.notes %></p>
+  </body>
+</html>
