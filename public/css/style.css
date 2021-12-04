@@ -1,13 +1,37 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+fieldset {
+  border: none;
+}
+
+input {
+  margin-bottom: 0.5rem;
+}
+
+div {
+  display: flex;
+  justify-content: space-between;
+}
+
 .sessions {
   border-collapse: collapse;
-  width: 80%;
-  margin-top: 4rem;
+  width: 60%;
+  margin-top: 2rem;
 }
 
 .sessions td,
 .sessions th {
   border: 1px solid #ddd;
   padding: 8px;
+  text-align: center;
 }
 
 .sessions tr:nth-child(even) {
@@ -21,7 +45,6 @@
 .sessions th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
   background-color: #04aa6d;
   color: white;
 }
