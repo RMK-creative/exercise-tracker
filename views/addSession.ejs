@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Exercise Tracker App</title>
+  </head>
+  <body>
+    <h2>Add new session</h2>
+    <form action="/sessions/createSession" method="POST">
+      <fieldset>
+        <div>
+          <label>
+            Type:
+            <input
+              type="text"
+              placeholder="e.g boxing"
+              name="sessionItemType"
+            />
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Date:
+            <input type="date" name="sessionItemDate" />
+          </label>
+        </div>
+
+        <div>
+          <label>
+            HR avg:
+            <input type="number" placeholder="bpm" name="sessionItemHR" />
+          </label>
+        </div>
+        <div>
+          <label>
+            Burned:
+            <input
+              type="number"
+              placeholder="calories"
+              name="sessionItemCals"
+            />
+          </label>
+        </div>
+        <div>
+          <label>
+            Duration:
+            <input type="text" placeholder="mins" name="sessionItemDuration" />
+          </label>
+        </div>
+        <div>
+          <label>
+            Notes:
+            <textarea type="text" name="sessionItemNotes"> </textarea>
+          </label>
+        </div>
+        <div>
+          <input type="submit" class="submit" />
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
