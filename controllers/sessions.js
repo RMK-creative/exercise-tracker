@@ -9,6 +9,15 @@ module.exports = {
       console.log(err);
     }
   },
+  getSessionData: async (req, res) => {
+    try {
+      const data = await Session.findById(req.params.id);
+      console.log(`data contains: ${data}, id: ${req.params.id}`);
+      res.render("sessionData.ejs", { data: data });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   createSession: async (req, res) => {
     try {
       await Session.create({
