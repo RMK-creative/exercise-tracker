@@ -23,11 +23,14 @@ app.use(express.static("public"));
         ROUTES
 */
 app.use("/", require("./routes/home"));
+app.use("/session/addSession", require("./routes/home"));
 app.use("/sessions", require("./routes/sessions"));
+app.use("/sessions/createSession", require("./routes/sessions"));
+app.use("/sessions/:id", require("./routes/sessions"));
 
 /*
         LISTEN
 */
 app.listen(process.env.PORT, () => {
-  console.log(`Server is running!`);
+  console.log(`Server is running on port 5080`);
 });
