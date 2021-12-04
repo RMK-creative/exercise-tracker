@@ -3,7 +3,7 @@ const Session = require("../models/Session");
 module.exports = {
   getSessions: async (req, res) => {
     try {
-      const sessionItems = await Session.find();
+      const sessionItems = await Session.find().sort({ date: -1 });
       res.render("sessions.ejs", { sessions: sessionItems });
     } catch (err) {
       console.log(err);
@@ -20,7 +20,7 @@ module.exports = {
         notes: req.body.sessionItemNotes,
       });
       console.log("Session has been added!");
-      res.redirect("/");
+      res.redirect("/sessions");
     } catch (err) {
       console.log(err);
     }
