@@ -1,12 +1,45 @@
 body {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 0 3rem;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  font-family: "Montserrat", sans-serif;
 }
+
+header {
+  background-color: #eeeeee;
+  width: 100%;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(30, 30, 31);
+  font-family: "Gruppo", cursive;
+}
+
+a,
+ul {
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* HEADER */
+.nav-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0 1rem;
+}
+
+/* ALL SESSIONS */
 
 fieldset {
   border: none;
