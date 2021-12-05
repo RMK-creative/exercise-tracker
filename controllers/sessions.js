@@ -12,7 +12,6 @@ module.exports = {
   getSessionData: async (req, res) => {
     try {
       const data = await Session.findById(req.params.id);
-      console.log(`data contains: ${data}, id: ${req.params.id}`);
       res.render("sessionData.ejs", { data: data });
     } catch (err) {
       console.log(err);
@@ -33,5 +32,16 @@ module.exports = {
     } catch (err) {
       console.log(err);
     }
+  },
+  deleteSession: (req, res) => {
+    const id = req.params.id;
+
+    Session.findByIdAndDelete(id)
+      .then((result) => {
+        res.json({ redirect: "/sessions" });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   },
 };
