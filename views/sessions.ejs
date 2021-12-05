@@ -1,48 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    
-    <title>Exercise Tracker App</title>
-  </head>
+  <%- include("./partials/head.ejs") %>
   <body>
-  
-  
-   
-    <h2>Previous Sessions</h2>
+    <%- include("./partials/nav.ejs") %>
 
-      <% if (sessions) { %>
+    <h2>All Sessions</h2>
+
+    <% if (sessions) { %>
     <table class="sessions">
       <thead>
         <tr>
           <th>Type</th>
           <th>Date</th>
-          <th>HR avg</th>
+          <!-- <th>HR avg</th> -->
           <th>Calories</th>
-          <th>Duration (mins)</th>
-        </tr
+          <!-- <th>Duration (mins)</th> -->
+        </tr>
       </thead>
-      
+
       <tbody>
         <% sessions.forEach( el => { %>
-          <tr>
-            <td><a href="/sessions/<%= el._id %>"><%= el.type %></a></td>
-            <td>%><%= moment(el.date).format('DD MMM YYYY') %></td>
-            <td><%= el.hr %></td>
-            <td><%= el.calories %></td>
-            <td><%= el.duration %></td>
-          </tr>
-        
-          
+        <tr>
+          <td><a href="/sessions/<%= el._id %>"><%= el.type %></a></td>
+          <td>%><%= moment(el.date).format('DD MMM YYYY') %></td>
+          <!-- <td><%= el.hr %></td> -->
+          <td><%= el.calories %></td>
+          <!-- <td><%= el.duration %></td> -->
         </tr>
-        
-        <% }) %> 
+        <% }) %>
       </tbody>
-      
     </table>
     <% } %>
+    <p><a href="/session/addSession">add new session</a></p>
   </body>
 </html>

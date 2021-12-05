@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Exercise Tracker App</title>
-  </head>
+  <%- include("./partials/head.ejs") %>
   <body>
-    <h1>IT WORKS!</h1>
-    <h2>Here's your session data..</h2>
-    <h3>Session: <%= data.type %></h3>
-    <p>Date: <%= moment(data.date).format('DD MMM YYYY') %></p>
-    <p>
-      In this session you burned <%= data.calories %> calories over a period of
-      <%= data.duration %> minutes, and your average heart rate was <%= data.hr
-      %>.
-    </p>
-    <p>Additional notes: <%= data.notes %></p>
+    <%- include("./partials/nav.ejs") %>
+    <h1>Session overview</h1>
+
+    <table class="sessions">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Date</th>
+          <th>HR avg</th>
+          <th>Calories</th>
+          <th>Duration (mins)</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td><%= data.type %></td>
+          <td><%= moment(data.date).format('DD MMM YYYY') %></td>
+          <td><%= data.hr %></td>
+          <td><%= data.calories %></td>
+          <td><%= data.duration %></td>
+          <td><%= data.notes %></td>
+        </tr>
+      </tbody>
+    </table>
   </body>
 </html>
