@@ -28,5 +28,23 @@
         </tr>
       </tbody>
     </table>
+    <a class="delete" data-doc="<%= data._id %>">delete</a>
+
+    <script>
+      const deleteSession = document.querySelector(".delete");
+
+      deleteSession.addEventListener("click", (e) => {
+        const endpoint = `/sessions/${deleteSession.dataset.doc}`;
+
+        fetch(endpoint, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((data) => (window.location.href = data.redirect))
+          .catch((err) => {
+            console.log(err);
+          });
+      });
+    </script>
   </body>
 </html>
