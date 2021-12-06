@@ -27,7 +27,6 @@ module.exports = {
         duration: req.body.sessionItemDuration,
         notes: req.body.sessionItemNotes,
       });
-      console.log("Session has been added!");
       res.redirect("/sessions");
     } catch (err) {
       console.log(err);
