@@ -18,6 +18,7 @@ module.exports = {
     }
   },
   createSession: async (req, res) => {
+    console.log(req.body);
     try {
       await Session.create({
         type: req.body.sessionItemType,
