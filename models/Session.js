@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const SessionSchema = new mongoose.Schema({
   type: {
     type: String,
+    required: true,
   },
   date: {
     type: Date,
