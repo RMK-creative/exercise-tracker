@@ -5,55 +5,81 @@
     <%- include("./partials/nav.ejs") %>
 
     <h2>Add new session</h2>
-    <form action="/sessions/createSession" method="POST">
+    <form
+      class="new-session_form"
+      action="/sessions/createSession"
+      method="POST"
+    >
       <fieldset>
-        <div>
+        <!-- <div> -->
           <label>
             Type:
             <input
+              class="new-session_form-input"
               type="text"
               placeholder="e.g boxing"
               name="sessionItemType"
+              required
             />
           </label>
         </div>
 
-        <div>
+        <!-- <div> -->
           <label>
             Date:
-            <input type="date" name="sessionItemDate" />
+            <input
+              type="date"
+              name="sessionItemDate"
+              class="new-session_form-input"
+            />
           </label>
         </div>
 
-        <div>
+        <!-- <div> -->
           <label>
             HR avg:
-            <input type="number" placeholder="bpm" name="sessionItemHR" />
+            <input
+              type="number"
+              placeholder="bpm"
+              name="sessionItemHR"
+              class="new-session_form-input"
+            />
           </label>
         </div>
-        <div>
+        <!-- <div> -->
           <label>
             Burned:
             <input
               type="number"
               placeholder="calories"
               name="sessionItemCals"
+              class="new-session_form-input"
             />
           </label>
         </div>
-        <div>
+        <!-- <div> -->
           <label>
             Duration:
-            <input type="text" placeholder="mins" name="sessionItemDuration" />
+            <input
+              type="text"
+              placeholder="mins"
+              name="sessionItemDuration"
+              class="new-session_form-input"
+            />
           </label>
         </div>
-        <div>
+        <!-- <div> -->
           <label>
             Notes:
-            <textarea type="text" name="sessionItemNotes"> </textarea>
+            <textarea
+              type="text"
+              name="sessionItemNotes"
+              class="new-session_form-input"
+            >
+            </textarea>
           </label>
         </div>
-        <div>
+        <!-- <div> -->
           <input type="submit" class="submit" />
         </div>
       </fieldset>
