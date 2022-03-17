@@ -23,6 +23,7 @@ app.use(express.static("public"));
         ROUTES
 */
 app.use("/", require("./routes/home"));
+app.use("/user", require("./routes/authRoutes"));
 app.use("/session/addSession", require("./routes/home"));
 app.use("/sessions", require("./routes/sessions"));
 app.use("/sessions/createSession", require("./routes/sessions"));
