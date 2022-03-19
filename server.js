@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const connectDB = require("./config/database");
+const cookieParser = require("cookie-parser");
 
 require("dotenv").config({ path: "./config/.env" });
 
@@ -9,6 +10,7 @@ connectDB();
 // body parser
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
 
 // ejs
 app.set("view engine", "ejs");
