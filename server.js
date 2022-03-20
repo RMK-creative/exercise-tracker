@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const connectDB = require("./config/database");
 const cookieParser = require("cookie-parser");
+const { requireAuth } = require("./middleware/authMiddleware");
 
 require("dotenv").config({ path: "./config/.env" });
 
@@ -27,9 +28,9 @@ app.use(express.static("public"));
 app.use("/", require("./routes/home"));
 app.use("/user", require("./routes/authRoutes"));
 app.use("/session/addSession", require("./routes/home"));
-app.use("/sessions", require("./routes/sessions"));
-app.use("/sessions/createSession", require("./routes/sessions"));
-app.use("/sessions/:id", require("./routes/sessions"));
+app.use("/sessions", requireAuth, require("./routes/sessions"));
+app.use("/sessions/createSession", requireAuth, require("./routes/sessions"));
+app.use("/sessions/:id", requireAuth, require("./routes/sessions"));
 
 /*
         LISTEN
